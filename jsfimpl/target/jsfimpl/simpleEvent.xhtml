@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"    
+      xmlns:f="http://xmlns.jcp.org/jsf/core"  
+      xmlns:a="http://xmlns.jcp.org/jsf/facelets">
+      
+      <h:head>
+      	<title>Simple Event</title>
+      </h:head>
+      <h:body>
+      <h:form>
+      	<h:panelGrid id = "panel" columns = "3" border = "1">   <!-- the third column is for the messages -->
+   			<f:facet name = "header">
+      			<h:outputText value = "Login"/>
+   			</f:facet>	
+      			<h:outputLabel value = "Username" />	<h:inputText id="fname" label="First Name" value="#{student.fName}" required="true" a:placeholder="Type in first name." requiredMessage="Fname is mandatory." />
+      			<h:message for="fname" />
+      			
+      			<h:outputLabel value = "Password" />    <h:inputText id="lname" label="Last Name" value="#{student.lName}" required="true" a:placeholder="Type in last name." requiredMessage="Lname is mandatory." />
+      			<h:message for="lname" />
+      			<f:facet name = "footer">
+      				<h:panelGroup style = "display:block; text-align:center">
+	        			<h:commandButton id = "submit" action="#{eventBean.logIn()}" value = "Submit" />
+        				<h:commandButton id = "reset" action="index" value = "Back" />
+      				</h:panelGroup>
+   				</f:facet>
+    		</h:panelGrid> 
+    	</h:form>
+    	 	
+      </h:body>
+</html>
+

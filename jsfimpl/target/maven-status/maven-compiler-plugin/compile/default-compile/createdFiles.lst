@@ -1,0 +1,16 @@
+dev/ui/model/Student.class
+dev/ui/model/ApplicationScope.class
+dev/ui/producer/LoggerProducer.class
+dev/ui/annotation/SpecificEvent.class
+dev/ui/model/ScopeBean.class
+dev/ui/event/EventObserverSpecific.class
+dev/ui/model/RequestScope.class
+dev/ui/event/EventObserverTwo.class
+dev/ui/model/DependentScope.class
+dev/ui/model/Student2.class
+dev/ui/model/SessionScope.class
+dev/ui/model/EventBean.class
+dev/ui/event/EventData.class
+dev/ui/annotation/Logged.class
+dev/ui/event/EventObserver.class
+dev/ui/model/LoggedInterceptor.class

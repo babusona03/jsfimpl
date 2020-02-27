@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"    
+      xmlns:f="http://xmlns.jcp.org/jsf/core"  
+      xmlns:a="http://xmlns.jcp.org/jsf/facelets">
+      
+      <h:head>
+      	<title>Delete Single Record</title>
+      </h:head>      
+        <h:body>
+      	<center>
+      	
+      	DELETEFORM
+      	<h:form>
+      	<h:panelGrid id="deletestaff" columns="3" border="2">
+      		<f:facet name = "header">
+      			<h:outputText value = "Delete Data for #{staffDao.staff.staffName}?"/>
+   			</f:facet>	
+ 				<h:outputLabel value = "Staff ID" />	<h:outputText id="staffid" 		label="Staff ID" 			value="#{staffDao.staff.staffId}"/>
+ 				<h:inputHidden value="#{staffDao.staff.staffId}" /> 				 
+      			<h:outputLabel value = "Staff Name" />	<h:outputText id="staffname" 	label="Enter Updated Name" 	value="#{staffDao.staff.staffName}" />
+      			<h:inputHidden value="#{staffDao.staff.staffName}" />	      						      			
+      			<h:outputLabel value = "Designation" /> <h:outputText id="desg" 		label="Enter designation" 	value="#{staffDao.staff.designation}"/>
+      			<h:inputHidden value="#{staffDao.staff.designation}" /> 							
+      			<h:outputLabel value = "DOJ" />			<h:outputText id="doj" 			label="Enter DOJ" 			value="#{staffDao.staff.doj}"/>
+      			<h:inputHidden value="#{staffDao.staff.doj}" ><f:convertDateTime type="localDate" pattern="MM/dd/yyyy"/></h:inputHidden> 	      			   
+      			<h:outputLabel value = "ModDate" />		<h:outputText id="moddate" 		label="ModDate" 			value="#{staffDao.staff.modDate}"/>
+      			<h:inputHidden value="#{staffDao.staff.modDate}" ><f:convertDateTime type="localDate" pattern="yyyy-MM-dd"/></h:inputHidden> 	    			
+      			<f:facet name="footer">
+      				<h:panelGroup style = "display:block; text-align:center">
+	        			<h:commandButton id = "submit" action="#{staffDao.deleteStaff()}" value = "Delete" />
+        				<h:button id = "reset" value="Back" outcome = "JpaHome" />
+      				</h:panelGroup>
+   				</f:facet>
+      	</h:panelGrid>
+      	</h:form>      	
+      	</center>
+      </h:body>
+</html>

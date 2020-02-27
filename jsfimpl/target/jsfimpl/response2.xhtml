@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      >
+      
+      <h:head>
+      	<title>JSF Test page : Response List Page</title>
+      </h:head>
+      <h:body>
+      	
+      	
+      		Hello,#{student2.fName} #{student2.lName}!
+      		<br/>
+      		Country : #{student2.country}<br/>
+      		Code:	#{student2.code}<br/>
+      		Email:	#{student2.eMail}<br/>
+      		Phone no:#{student2.phone}<br/> 
+      		AS Used: 
+      		<ul>
+      			<ui:repeat var="singleAsName" value="#{student2.appServer}">
+      				<li>#{singleAsName}</li>
+      			</ui:repeat>
+      		</ul>
+      	
+      </h:body>
+
+   
+   
+</html>

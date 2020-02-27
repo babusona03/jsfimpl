@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"    
+      xmlns:f="http://xmlns.jcp.org/jsf/core"  
+      xmlns:a="http://xmlns.jcp.org/jsf/facelets">
+      
+      <h:head>
+      	<title>JPA Home page</title>
+      </h:head>      
+        <h:body>
+      	<center>
+      	<h:form>
+      		<h:panelGrid id = "staffdcf" columns = "3" border = "1">
+      		
+      		<f:facet name = "header">
+      			<h:outputText value = "Staff DCF"/>
+   			</f:facet>	
+      			<h:outputLabel value = "Staff Name" />	<h:inputText id="staffname" label="Enter Updated Name" value="#{staffDao.staff.staffName}" />
+      			<h:message for="staffname" />      			
+      			<h:outputLabel value = "Designation" /> <h:inputText id="desg" label="Enter designation" value="#{staffDao.staff.designation}" required="true" a:placeholder="Type in last name." requiredMessage="designation is mandatory." />
+      			<h:message for="desg" />
+      			<f:facet name="footer">
+      				<h:panelGroup style = "display:block; text-align:center">
+	        			<h:commandButton id = "submit" action="#{staffDao.createStaff()}" value = "Submit" />
+        				<h:button id = "reset" value="Back" outcome = "/index" />
+      				</h:panelGroup>
+   				</f:facet>
+      		</h:panelGrid>
+      	</h:form>
+      	
+      	<!--  -->
+      	<br/>
+      	<br/>
+      	<h:dataTable value="#{staffDao.readStaffOrderById()}" var="stafflist" border="2" cellspacing="1" cellpadding="1">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+					<h:outputText id="dataid" value="#{stafflist.staffId}" />                    
+                </h:column>
+                <h:column>
+                <f:facet name="header">NAME</f:facet>
+					<h:outputText id="dataname" value="#{stafflist.staffName}" />                    
+                </h:column>
+                <h:column>
+                <f:facet name="header">DESG</f:facet>
+					<h:outputText id="datadesg" value="#{stafflist.designation}" />                    
+                </h:column>
+                <h:column>
+                <f:facet name="header">DOJ</f:facet>
+					<h:outputText id="datadoj" value="#{stafflist.doj}" />                    
+                </h:column>
+                <h:column>
+                <f:facet name="header">NAME</f:facet>
+					<h:outputText id="datamod" value="#{stafflist.modDate}" />                    
+                </h:column>
+        </h:dataTable>
+      	
+      	
+      	<br/>
+      	<br/>
+      	<br/>
+      	<h:form>
+		<h:dataTable value="#{staffDao.readStaff()}" var="stafflist" border="2" cellspacing="1" cellpadding="1">
+			<h:column>
+				<f:facet name="header">ID</f:facet>
+					<h:outputText id="data" value="#{stafflist.staffId}" readonly="true"/>                    
+                </h:column>
+			<h:column>
+				<f:facet name="header">NAME</f:facet>
+                    #{stafflist.staffName}
+                </h:column>
+			<h:column>
+				<f:facet name="header">DESG</f:facet>
+                    #{stafflist.designation}
+                </h:column>
+                <!--  
+			<h:column>
+				<f:facet name="header">DOJ</f:facet>
+                    #{stafflist.doj}
+                </h:column>
+			<h:column>
+				<f:facet name="header">MODDATE</f:facet>
+                    #{stafflist.modDate}
+                </h:column>
+                -->
+            <h:column>
+             	<f:facet name="header">READ</f:facet>
+				<h:commandButton id = "read" action="#{staffDao.readSingleStaff(stafflist)}" value = "Read" />                    
+                </h:column>
+            <h:column>
+            	<f:facet name="header">EDIT</f:facet>				
+				<h:commandButton id="edit" action="#{staffDao.prepEdit(stafflist)}" value="Edit" />                    
+                </h:column>
+             <h:column>
+             	<f:facet name="header">DELETE</f:facet>
+				<h:commandButton id = "delete" action="#{staffDao.prepDelete(stafflist)}" value = "Delete" />                    
+                </h:column>
+		</h:dataTable>
+	</h:form>
+      	</center>
+      </h:body>
+</html>

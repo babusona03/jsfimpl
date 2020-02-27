@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"      
+      xmlns:a="http://xmlns.jcp.org/jsf/facelets">
+      
+      <h:head>
+      	<title>JSF Test page : Input Form</title>
+      </h:head>
+      <h:body>
+      
+      	<h:form>
+      		First Name:<h:inputText id="fname" value="#{student.fName}" a:placeholder="Type in first name."/>
+      		<br/>
+      		Last Name:<h:inputText id="lname" value="#{student.lName}" a:placeholder="Type in last name."/>
+      		<br/>      		
+      		<br/>
+      		<h:commandButton action="response" value="Submit" />
+      		<br/>
+      		<h:commandButton action="regcountry" value="List" />
+      		<br/>
+      		<h:commandButton action="scope" value="StereoScope" />
+      		<br/>
+      		<h:commandButton action="simpleEvent" value="Simple event" />
+      		<br/>
+      		<h:link value="Link to Hello Page" outcome="/WEB-INF/jsf/hello"/>
+      	</h:form>
+      </h:body>
+
+   
+   
+</html>

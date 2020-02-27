@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns="http://www.w3.org/1999/xhtml"       
+      xmlns:h="http://xmlns.jcp.org/jsf/html"     
+      xmlns:f="http://xmlns.jcp.org/jsf/core" 
+      xmlns:a="http://xmlns.jcp.org/jsf/facelets">
+      
+      <h:head>
+      	<title>BEAN:SCOPE</title>
+      </h:head>
+      
+      <h:body>
+      	<h1>Request Scope hashCode</h1>		<h:outputText value="#{scopeBean.requestScope}" /><br/>
+      	<h1>Session Scope hashCode</h1>		<h:outputText value="#{scopeBean.sessionScope}" /><br/>
+      	<h1>Application Scope hashCode</h1>	<h:outputText value="#{scopeBean.applicationScope}" /><br/>
+       	<h1>Dependent Scope hashCode</h1>	<h:outputText value="#{scopeBean.dependentScope}" /><br/>
+      </h:body>
+
+   
+   
+</html>
